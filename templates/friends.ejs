@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./includes/head', { siteTitle: `
+    ${site.customConfig.friendsPageName} | ${themeConfig.siteName}` }) %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <%- include('./includes/header') %>
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+        <div class="post-pagetitle">
+          <h2><%= site.customConfig.friendsPageName%></h2>
+        </div>
+
+        <div class="friendbox">
+          <% if (site.customConfig.friends) { %> <%
+            site.customConfig.friends.forEach(function(friend) { %>
+          <div class="friend-box friendblock" onclick="window.open('<%= friend.siteLink %>', '_blank')">
+            <% if (friend.PictureSource) { %>
+            <img class="friend-avatar" src="<%= friend.siteLogoLink %>" />
+            <% } else{%>
+            <img class="friend-avatar" src="/post-images/<%= friend.siteLogoLink %>" />
+            <%};%>
+            <div class="flink-info">
+              <a><%= friend.siteName %></a>
+              <br />
+              <%= friend.description %>
+            </div>
+          </div>
+          <% }); %> <% } %>
+        </div>
+
+        <div class="page-count">
+          <% if (site.customConfig.openWalinePageCount) { %>
+          <!-- 访问量统计 -->
+          <!-- data-path 将作为查询条件 -->
+          阅读量:
+          <span class="waline-pageview-count" data-path="/post/<%= post.fileName %>/"></span>
+          <% } %> <% if (site.customConfig.openTwikooPageCount) { %>
+          <!--访问量统计 -->
+          <span id="/post/friends/" class="leancloud_visitors">
+            阅读量: <span id="twikoo_visitors">0</span>
+          </span>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- back to top -->
+      <button oneclik="topFunction()" id="BackToTop">TOP</button>
+
+      <div class="post-comment inner">
+        <div class="post-comment"><%- include('./includes/comment') %></div>
+      </div>
+    </div>   
+    <!-- Footer -->
+    <%- include('./includes/footer') %>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/media/scripts/jquery.min.js"></script>
+  <script src="/media/scripts/browser.min.js"></script>
+  <script src="/media/scripts/breakpoints.min.js"></script>
+  <script src="/media/scripts/util.js"></script>
+  <script src="/media/scripts/main.js"></script>
+  <script>
+    back_to_top();
+  </script>
+</body>
+
+</html>

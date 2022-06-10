@@ -1,0 +1,290 @@
+{
+  "name": "gridea-theme-phantom",
+  "version": "0.1.0",
+  "author": "wherelse",
+  "repository": "https://github.com/wherelse/gridea-theme-phantom",
+  "customConfig": [
+    {
+      "name": "github",
+      "label": "Github",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "twitter",
+      "label": "Twitter",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "weibo",
+      "label": "微博",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "zhihu",
+      "label": "知乎",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "facebook",
+      "label": "Facebook",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "500px",
+      "label": "500px",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "dribbble",
+      "label": "dribbble",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "instagram",
+      "label": "instagram",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "codeHighlight",
+      "label": "代码高亮主题",
+      "group": "主题功能",
+      "value": true,
+      "type": "switch",
+      "note": "若不需要，可关闭以加快页面加载速度"
+    },
+    {
+      "name": "katex",
+      "label": "Katex公式",
+      "group": "主题功能",
+      "value": true,
+      "type": "switch",
+      "note": "若不需要，可关闭以加快页面加载速度"
+    },
+    {
+      "name": "beian",
+      "label": "备案信息",
+      "group": "主题功能",
+      "value": "",
+      "type": "input",
+      "note": "请填写备案号"
+    },
+    {
+      "name": "openTwikoo",
+      "label": "是否开启Twikoo",
+      "group": "评论功能",
+      "value": false,
+      "type": "switch",
+      "note": "设置文档： https://twikoo.js.org/"
+    },
+    {
+      "name": "twikooEnvId",
+      "label": "envID",
+      "group": "评论功能",
+      "value": "",
+      "type": "input",
+      "note": "云函数环境ID"
+    },
+    {
+      "name": "twikooVersion",
+      "label": "twikoo版本",
+      "group": "评论功能",
+      "value": "",
+      "type": "input",
+      "note": "twikoo前端版本"
+    },
+    {
+      "name": "openTwikooPageCount",
+      "label": "是否开启访问量统计",
+      "group": "评论功能",
+      "value": false,
+      "type": "switch",
+      "note": "基于Twikoo的访问量统计"
+    },
+    {
+      "name": "twikooRegion",
+      "label": "twikoo环境地域",
+      "group": "评论功能",
+      "value": "ap-shanghai",
+      "type": "input",
+      "note": "默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填"
+    },
+    {
+      "name": "twikooLang",
+      "label": "language",
+      "group": "评论功能",
+      "value": "zh-cn",
+      "type": "input",
+      "note": "twikoo语言"
+    },
+    {
+      "name": "openWaline",
+      "label": "是否开启Waline",
+      "group": "评论功能",
+      "value": false,
+      "type": "switch",
+      "note": "设置文档：https://waline.js.org/"
+    },
+    {
+      "name": "walineUrl",
+      "label": "walineUrl",
+      "group": "评论功能",
+      "value": "",
+      "type": "input",
+      "note": "waline服务端地址"
+    },
+    {
+      "name": "openWalinePageCount",
+      "label": "是否开启访问量统计",
+      "group": "评论功能",
+      "value": false,
+      "type": "switch",
+      "note": "基于Waline的访问量统计"
+    },
+    {
+      "name": "walineLang",
+      "label": "waline语言",
+      "group": "评论功能",
+      "value": "zh",
+      "type": "input",
+      "note": "waline语言"
+    },
+    {
+      "name": "galleryPageName",
+      "label": "相册页面标题",
+      "group": "相册",
+      "value": "相册",
+      "type": "input",
+      "note": "根据喜好更改"
+    },
+    {
+      "name": "photos",
+      "label": "相册",
+      "group": "相册",
+      "type": "array",
+      "value": [],
+      "arrayItems": [
+        {
+          "label": "图片来源",
+          "name": "PictureSource",
+          "value": false,
+          "type": "switch",
+          "note": "打开时使用图床图片，关闭时使用本地图片"
+        },
+        {
+          "label": "图片",
+          "name": "photolink",
+          "type": "input",
+          "value": "",
+          "note": "图床/图片链接，本地图片请放到‘post-image’目录下"
+        },
+        {
+          "label": "时间",
+          "name": "time",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "label": "地点",
+          "name": "location",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "label": "设备",
+          "name": "device",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "label": "描述",
+          "name": "description",
+          "type": "textarea",
+          "value": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "friendsPageName",
+      "label": "友链页面标题",
+      "group": "友链",
+      "value": "我的朋友们",
+      "type": "input",
+      "note": "根据喜好更改"
+    },
+    {
+      "name": "friends",
+      "label": "友链",
+      "group": "友链",
+      "type": "array",
+      "value": [],
+      "arrayItems": [
+        {
+          "label": "名称",
+          "name": "siteName",
+          "type": "input",
+          "value": ""
+        },
+        {
+          "label": "链接",
+          "name": "siteLink",
+          "type": "input",
+          "value": ""
+        },
+        {
+          "label": "头像图片来源",
+          "name": "PictureSource",
+          "value": false,
+          "type": "switch",
+          "note": "打开时使用图床图片，关闭时使用上传图片"
+        },
+        {
+          "label": "Logo",
+          "name": "siteLogoLink",
+          "type": "input",
+          "value": "",
+          "note": "图床/图片链接，本地图片请放到‘post-image’目录下"
+        },
+        {
+          "label": "描述",
+          "name": "description",
+          "type": "textarea",
+          "value": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "ga",
+      "label": "跟踪 ID",
+      "group": "谷歌统计",
+      "value": "",
+      "type": "input",
+      "note": "G-xxxxxxxxx-x"
+    }
+  ]
+}

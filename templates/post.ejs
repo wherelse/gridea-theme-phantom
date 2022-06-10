@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+  <link rel="canonical" href="<%= post.link %>" />
+  <meta name="socialText" content="<%= site.customConfig.socialText %>" />
+  <meta name="description" content="<%= post.description %>" />
+  <meta name="referrer" content="always" />
+  <% if (site.customConfig.katex) { %>
+  <link rel="stylesheet" href="/media/css/katex.min.css">
+  <script defer src="/media/scripts/katex.min.js"></script>
+  <script defer src="/media/scripts/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <% } %>
+  <% if (site.customConfig.codeHighlight) { %>
+  <link rel="stylesheet" href="/media/css/prism.css">
+  <% } %>
+  <% if (site.customConfig.openTwikoo) { %>
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <% } %>  
+  <% if (site.customConfig.openWaline) { %>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+  <% } %>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <%- include('./includes/header') %>
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+        <div class="post-pagetitle">
+          <h1>
+            <%= post.title %>
+          </h1>
+        </div>
+        <div class="post-info">
+          <time class="post-time">
+            <%= post.dateFormat %>
+          </time>
+          <span class="read-times">
+            <%= post.stats.text %>
+          </span>
+          <% post.tags.forEach(function(tag) { %>
+          <a href="<%= tag.link %>" class="post-tags">
+            # <%= tag.name %>
+          </a>
+          <% }); %>
+        </div>
+        <% if (themeConfig.showFeatureImage && post.feature) { %>
+        <img src='<%= post.feature %>' class="post-feature" alt="" />
+        <% } %>
+        <div class="post-content-wrapper">
+          <div class="post-content">
+            <%- post.content %>
+          </div>
+          <div class="toc-container">
+            <%- post.toc %>
+          </div>
+        </div>
+
+        <div class="page-count">
+          <% if (site.customConfig.openWalinePageCount) { %>
+          <!-- 访问量统计 -->
+          <!-- data-path 将作为查询条件 -->
+          阅读量: <span class="waline-pageview-count" data-path="/post/<%= post.fileName %>/"></span>
+          <% } %>
+
+          <% if (site.customConfig.openTwikooPageCount) { %>
+          <!--访问量统计 -->
+            阅读量: <span id="twikoo_visitors">0</span>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="post-pagination inner">
+        <% if (post.nextPost && !post.hideInList) { %>
+        <div class="next-post">
+          <div>
+            <a href="<%= post.nextPost.link %>">下一篇</a>
+          </div>
+        </div>
+        <% } %>
+        <% if (post.prevPost && !post.hideInList) { %>
+        <div class="prev-post">
+          <div>
+            <a href="<%= post.prevPost.link %>">上一篇</a>
+          </div>
+        </div>
+        <% } %>
+      </div>
+
+    </div>
+
+    <!-- back to top -->
+    <button oneclik="topFunction()" id="BackToTop">
+      TOP
+    </button>
+
+    <div class="post-comment inner">
+      <div class="post-comment">
+        <%- include('./includes/comment') %>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./includes/footer') %>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/media/scripts/jquery.min.js"></script>
+  <script src="/media/scripts/browser.min.js"></script>
+  <script src="/media/scripts/breakpoints.min.js"></script>
+  <script src="/media/scripts/util.js"></script>
+  <script src="/media/scripts/main.js"></script>
+  <% if (site.customConfig.codeHighlight) { %>
+  <script src="/media/scripts/prism.js"></script>
+  <script>
+    Prism.highlightAll();
+  </script>
+  <% } %>
+  <script>
+    post_scroll();
+    back_to_top();
+  </script>
+</body>
+
+</html>

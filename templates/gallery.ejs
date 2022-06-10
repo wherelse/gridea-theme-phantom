@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle:` ${site.customConfig.galleryPageName} | ${themeConfig.siteName} `}) %>	
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+  </head>
+
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="mainpage-wrapper">
+    <%- include('./includes/header') %>
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <div class="post-pagetitle">
+            <h2><%= site.customConfig.galleryPageName%></h2>
+          </div>
+
+          <section class="tiles">
+          <% if (site.customConfig.photos) { %> <%
+            site.customConfig.photos.forEach(function(photo) { %>
+              <article class="style1">
+                <div class="gallery-image-wrapper">
+                  <div class="gallery-image">
+                    <% if (photo.PictureSource) { %>
+                    <img  src="<%= photo.photolink %>" loading="lazy" />
+                    <% } else{%>
+                    <img  src="/post-images/<%= photo.photolink %>" loading="lazy"/>
+                    <%};%> 
+                  </div>  
+                  <div class="image-title">
+                    <ul>
+                      <% if (photo.time) { %>
+                        <li class=""><%= photo.time %></li>
+                      <% }%>
+                      <% if (photo.location) { %>
+                        <li class=""><%= photo.location %></li>
+                      <% }%>
+                      <% if (photo.device) { %>
+                        <li class=""><%= photo.device %></li>
+                      <% }%>
+                      <% if (photo.description) { %>
+                        <li class=""><%= photo.description %></li>
+                      <% }%>
+                    </ul>
+                  </div>  
+                </div>
+              </article> 
+            <% }); %> <% } %>
+          </section>  
+
+        </div>
+      </div>
+
+      <!-- back to top -->
+      <button oneclik="topFunction()" id="BackToTop">
+        TOP
+      </button>
+
+      <%- include('./includes/footer') %>
+
+    <script src="/media/scripts/jquery.min.js"></script>
+    <script src="/media/scripts/browser.min.js"></script>
+    <script src="/media/scripts/breakpoints.min.js"></script>
+    <script src="/media/scripts/util.js"></script>
+    <script src="/media/scripts/main.js"></script>
+    <script>
+      back_to_top();
+    </script>
+  </body>
+</html>

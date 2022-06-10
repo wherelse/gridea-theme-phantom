@@ -1,0 +1,32 @@
+
+<% posts.forEach(function(post) { %>
+  <article class="style1">
+    <span class="image">
+      <% if (themeConfig.showFeatureImage && post.feature) { %>
+        <a href="<%= post.link %>">
+          <img src='<%= post.feature %>' alt="" loading="lazy"/>
+        </a>
+      <% } %>
+    </span>
+    <div class="post-title">
+      <a href="<%= post.link %>">
+        <h2><%= post.title %></h2>
+      </a>
+    </div>
+    <div class="post-info">
+      <time class="post-time">
+        <%= post.dateFormat %>
+      </time>
+      <% post.tags.forEach(function(tag) { %>
+        <a href="<%= tag.link %>" class="post-tag">
+          # <%= tag.name %>
+        </a>
+      <% }); %>
+    </div>
+    <div class="post-abstract content">
+      <%- post.abstract || post.description %>
+    </div>
+  </article>
+<% }); %>
+
+

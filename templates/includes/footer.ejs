@@ -1,0 +1,31 @@
+<!-- Footer -->
+<footer id="footer">
+  <div class="inner">
+    <section>
+      <h2>Follow</h2>
+      <ul class="icons">
+        <% ['github', 'twitter', 'weibo','zhihu', 'facebook','500px','dribbble','instagram'].forEach((item) => { %>
+          <% if (site.customConfig[item]) { %>
+          <li>
+            <a href="<%= site.customConfig[item] %>" target="_blank">
+              <i class="icon brands style2 fab fa-<%= item %>"></i>
+            </a>
+          </li>
+          <% } %>
+        <% }) %>
+      </ul>
+    </section>
+    <ul class="copyright">
+      <li>
+        <a href="/atom.xml" target="_blank">
+          RSS
+        </a> 
+      </li>
+      <li><a href="https://github.com/wherelse/gridea-theme-phantom">Theme Phantom</a></li>
+      <li><%- themeConfig.footerInfo %></li>
+      <% if (site.customConfig.beian){ %>
+        <li><a href="https://beian.miit.gov.cn/" target="_blank"><%= site.customConfig.beian %></a></li>
+      <% } %>
+    </ul>
+  </div>
+</footer>

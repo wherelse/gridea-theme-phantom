@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle: ` ${themeConfig.siteName}` }) %>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  </head>
+  <body class="is-preload"> 
+		<!-- Wrapper -->
+			<div id="wrapper">
+      <%- include('./includes/header') %>
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+              <h2 class="archives-title">
+                归档
+              </h2> 
+            <%- include('./includes/post-list-archives') %>
+        
+            <%- include('./includes/pagination') %>
+    
+            </div>
+					</div>
+
+        <%- include('./includes/footer') %>
+			</div>
+
+		<!-- Scripts -->
+			<script src="/media/scripts/jquery.min.js"></script>
+			<script src="/media/scripts/browser.min.js"></script>
+			<script src="/media/scripts/breakpoints.min.js"></script>
+			<script src="/media/scripts/util.js"></script>
+			<script src="/media/scripts/main.js"></script>
+
+      </div>
+    </div>
+  </body>
+</html>

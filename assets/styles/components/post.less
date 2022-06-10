@@ -1,0 +1,253 @@
+.post-pagetitle {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 1em 0 1em 0;
+}
+
+.post-time {
+    font-weight: 600;
+    font-size: 0.85em;
+    padding: 7.5px 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 0px 10px 0px 0px;
+}
+
+.read-times {
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin: 0px 5px;
+}
+
+.post-tag {
+    background-color: #fff2c2;
+    border-radius: 10px;
+    padding: 4px 10px;
+    border-bottom: none;
+    font-size: 0.9em;
+    border: 1px solid #fff2c2;
+    margin: 0px 5px;
+}
+
+.post-tag:hover {
+    border-color: #ffc800;
+}
+
+.post-tags {
+    background-color: #fff2c2;
+    border-radius: 10px;
+    padding: 4px 10px;
+    border-bottom: none;
+    font-size: 0.9em;
+    border: 1px solid #fff2c2;
+    margin: 0px 10px;
+}
+
+.post-tags:hover {
+    border-color: #ffc800;
+}
+
+.post-feature {
+    margin: 2em 0em;
+    padding: 0em 2em;
+}
+
+.post-info {
+    margin: 0em 0em 1.2em 0em;
+}
+
+.post-content-wrapper {
+    display: flex;
+    margin: auto;
+}
+
+.post-content {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: justify;
+    overflow: auto;
+    font-size: 17px;
+    p {
+        line-height: 1.62;
+        hyphens: auto;
+        padding-bottom: 10px;
+    }
+
+    li>p {
+        padding-bottom: 5px;
+    }
+
+    a {
+        color: #2531db;
+    }
+
+    a:hover{
+        text-decoration-line: underline;
+    }
+
+    .katex{
+        font-size: 20px;
+    }
+
+    ul{
+        margin: 0px;
+    }
+
+    ol {
+        margin: 0px;
+    }
+
+    ul li {
+        font-size: 17px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    li {
+        font-size: 17px;
+        padding-left: 10px;
+        margin-bottom:5px;
+        margin-top: 5px;
+    }
+
+    blockquote{
+        p{
+            padding: 0;
+        }
+    }
+    .contains-task-list {
+        list-style: none;
+        padding-left: 0%;
+    }
+    
+    mark {
+        background-color: yellow;
+        color: black;
+    }
+}
+@media screen and (max-width: 736px) {
+    .post-content{
+        font-size: 1em;
+        ul li{
+            font-size: 0.95em;
+        }
+        li{
+            font-size: 0.95em;
+        }
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .post-content {
+        font-size: 0.95em;
+        ul li {
+            font-size: 0.9em;
+        }
+        
+        li {
+            font-size: 0.9em;
+        }
+    }
+}
+
+
+.toc-container {
+    .markdownIt-TOC {
+        position: sticky;
+        top: 40px;
+        right: 20px;
+        width: 250px;
+        font-size: 15px;
+        overflow-y: auto;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 8px;
+            bottom: 0;
+            width: 1px;
+            background-color: #ebedef;
+            opacity: .5;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding-left: 1rem;
+    }
+
+    li {
+        //padding-left: 16px;
+
+        a {
+            color: #464646;
+            padding: 4px;
+            display: block;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #eeeeee;
+                color: #1321e7;
+                border-radius: 5px;
+                font-weight: 600;
+            }
+
+            &.current {
+                color: #1321e7;
+                background: #eeeeee;
+                border-radius: 5px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .toc-container {
+        display: none;
+    }
+}
+
+.post-pagination {
+    flex: 1;
+    margin: 0 auto;
+    margin-top: 2em;
+
+    .next-post {
+        float: right;
+        padding: 5px 10px;
+        background-color: #f6f6f6;
+        border-radius: 5px;
+    }
+
+    .prev-post {
+        float: left;
+        padding: 5px 10px;
+        background-color: #f6f6f6;
+        border-radius: 5px;
+    }
+
+    .next-post:hover {
+        background-color: #e4e4e4;
+    }
+
+    .prev-post:hover {
+        background-color: #e4e4e4;
+    }
+}
+
+.page-count {
+    margin: 1em auto;
+    text-align: center;
+}
+
+.post-comment {
+    display: block;
+    max-width: 48rem;
+    margin: 1em auto;
+}

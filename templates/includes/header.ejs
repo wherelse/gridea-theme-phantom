@@ -1,0 +1,39 @@
+<!-- Header -->
+<header id="header">
+  <div class="inner">
+    <!-- Logo -->
+    <a href="<%= themeConfig.domain %>" class="logo">
+      <span class="symbol"
+        ><img
+          src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>"
+          alt=""
+        />
+      </span>
+      <div class="site-title"> <%= themeConfig.siteName %> </div>
+    </a>
+
+    <!-- Nav -->
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+  <ul>
+    <% menus.forEach(function(menu) { %>
+    <% if (menu.openType === 'External') { %>
+      <li><a href="<%= menu.link %>" class="menu" target="_blank">
+        <%= menu.name %>
+      </a></li>
+    <% } else { %>
+      <li><a href="<%= menu.link %>" class="menu">
+        <%= menu.name %>
+      </a></li>
+      <% } %>
+    <% }); %>
+  </ul>
+</nav>
