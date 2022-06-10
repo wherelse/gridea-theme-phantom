@@ -30,7 +30,7 @@
                     <% if (photo.PictureSource) { %>
                     <img  src="<%= photo.photolink %>" loading="lazy" />
                     <% } else{%>
-                    <img  src="/post-images/<%= photo.photolink %>" loading="lazy"/>
+                    <img  src="<%= site.themeConfig.domain %>/post-images/<%= photo.photolink %>" loading="lazy"/>
                     <%};%> 
                   </div>  
                   <div class="image-title">
@@ -64,11 +64,11 @@
 
       <%- include('./includes/footer') %>
 
-    <script src="/media/scripts/jquery.min.js"></script>
-    <script src="/media/scripts/browser.min.js"></script>
-    <script src="/media/scripts/breakpoints.min.js"></script>
-    <script src="/media/scripts/util.js"></script>
-    <script src="/media/scripts/main.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/jquery.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/browser.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/breakpoints.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/util.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
     <script>
       back_to_top();
     </script>

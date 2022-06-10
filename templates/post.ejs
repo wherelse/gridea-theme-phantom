@@ -8,12 +8,12 @@
   <meta name="description" content="<%= post.description %>" />
   <meta name="referrer" content="always" />
   <% if (site.customConfig.katex) { %>
-  <link rel="stylesheet" href="/media/css/katex.min.css">
-  <script defer src="/media/scripts/katex.min.js"></script>
-  <script defer src="/media/scripts/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <link rel="stylesheet" href="<%= site.themeConfig.domain %>/media/css/katex.min.css">
+  <script defer src="<%= site.themeConfig.domain %>/media/scripts/katex.min.js"></script>
+  <script defer src="<%= site.themeConfig.domain %>/media/scripts/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
   <% } %>
   <% if (site.customConfig.codeHighlight) { %>
-  <link rel="stylesheet" href="/media/css/prism.css">
+  <link rel="stylesheet" href="<%= site.themeConfig.domain %>/media/css/prism.css">
   <% } %>
   <% if (site.customConfig.openTwikoo) { %>
     <link rel="preconnect" href="https://cdn.staticfile.org" />
@@ -112,13 +112,13 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/media/scripts/jquery.min.js"></script>
-  <script src="/media/scripts/browser.min.js"></script>
-  <script src="/media/scripts/breakpoints.min.js"></script>
-  <script src="/media/scripts/util.js"></script>
-  <script src="/media/scripts/main.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/jquery.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/browser.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/breakpoints.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/util.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
   <% if (site.customConfig.codeHighlight) { %>
-  <script src="/media/scripts/prism.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/prism.js"></script>
   <script>
     Prism.highlightAll();
   </script>

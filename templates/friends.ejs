@@ -26,7 +26,7 @@
             <% if (friend.PictureSource) { %>
             <img class="friend-avatar" src="<%= friend.siteLogoLink %>" />
             <% } else{%>
-            <img class="friend-avatar" src="/post-images/<%= friend.siteLogoLink %>" />
+            <img class="friend-avatar" src="<%= site.themeConfig.domain %>/post-images/<%= friend.siteLogoLink %>" />
             <%};%>
             <div class="flink-info">
               <a><%= friend.siteName %></a>
@@ -64,11 +64,11 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/media/scripts/jquery.min.js"></script>
-  <script src="/media/scripts/browser.min.js"></script>
-  <script src="/media/scripts/breakpoints.min.js"></script>
-  <script src="/media/scripts/util.js"></script>
-  <script src="/media/scripts/main.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/jquery.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/browser.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/breakpoints.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/util.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
   <script>
     back_to_top();
   </script>
