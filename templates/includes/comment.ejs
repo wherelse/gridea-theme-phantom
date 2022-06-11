@@ -7,21 +7,25 @@
     twikoo.init({
       envId: '<%= site.customConfig.twikooEnvId %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
       el: '#tcomment', // 容器元素
+
       region: '<%= site.customConfig.twikooRegion %>', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
       lang: '<%= site.customConfig.twikooLang %>', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
+    
     })
   </script>
 <% } %>
 
 <% if (site.customConfig.openWaline) { %>
-  <h2>评论</h2>
   <!-- 脚本文件 -->
+  <div id="waline"></div>
   <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
   <script>
     Waline.init({
       el: '#waline',// 容器元素
       serverURL: '<%= site.customConfig.walineUrl %>',
-      pageview: '<%- site.customConfig.openWalinePageCount %>', // 评论数统计
+      path: window.location.href,
+      pageview: <%- site.customConfig.openWalinePageCount %>, // 评论数统计
+      lang:'<%- site.customConfig.walineLang %>'
     });
   </script>
 <% } %>

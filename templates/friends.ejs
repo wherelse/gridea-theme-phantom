@@ -6,6 +6,14 @@
     ${site.customConfig.friendsPageName} | ${themeConfig.siteName}` }) %>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <% if (site.customConfig.openTwikoo) { %>
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <% } %>  
+  <% if (site.customConfig.openWaline) { %>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+  <% } %>
 </head>
 
 <body class="is-preload">
@@ -42,10 +50,11 @@
           <!-- 访问量统计 -->
           <!-- data-path 将作为查询条件 -->
           阅读量:
-          <span class="waline-pageview-count" data-path="/post/<%= post.fileName %>/"></span>
-          <% } %> <% if (site.customConfig.openTwikooPageCount) { %>
+          <span class="waline-pageview-count" data-path="<%= site.themeConfig.domain %>/post/friends/"></span>
+          <% } %> 
+          <% if (site.customConfig.openTwikooPageCount) { %>
           <!--访问量统计 -->
-          <span id="/post/friends/" class="leancloud_visitors">
+          <span id="<%= site.themeConfig.domain %>/post/friends/" class="leancloud_visitors">
             阅读量: <span id="twikoo_visitors">0</span>
           </span>
           <% } %>

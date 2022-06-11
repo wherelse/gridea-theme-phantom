@@ -67,7 +67,7 @@
           <% if (site.customConfig.openWalinePageCount) { %>
           <!-- 访问量统计 -->
           <!-- data-path 将作为查询条件 -->
-          阅读量: <span class="waline-pageview-count" data-path="/post/<%= post.fileName %>/"></span>
+          阅读量: <span class="waline-pageview-count" data-path="<%= site.themeConfig.domain %>/post/<%= post.fileName %>/"></span>
           <% } %>
 
           <% if (site.customConfig.openTwikooPageCount) { %>
