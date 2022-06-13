@@ -4,7 +4,7 @@
     <section>
       <h2>Follow</h2>
       <ul class="icons">
-        <% ['github', 'twitter', 'weibo','zhihu', 'facebook','500px','dribbble','instagram'].forEach((item) => { %>
+        <% ['github', 'twitter', 'weibo','zhihu','bilibili','facebook','500px','dribbble','instagram'].forEach((item) => { %>
           <% if (site.customConfig[item]) { %>
           <li>
             <a href="<%= site.customConfig[item] %>" target="_blank">
@@ -17,7 +17,7 @@
     </section>
     <ul class="copyright">
       <li>
-        <a href="/atom.xml" target="_blank">
+        <a href="<%= site.themeConfig.domain %>/atom.xml" target="_blank">
           RSS
         </a> 
       </li>

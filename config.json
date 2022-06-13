@@ -37,6 +37,14 @@
       "note": "链接地址"
     },
     {
+      "name": "bilibili",
+      "label": "bilibili",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
       "name": "facebook",
       "label": "Facebook",
       "group": "社交",
