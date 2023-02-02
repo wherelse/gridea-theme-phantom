@@ -210,24 +210,6 @@
           "note": "图床/图片链接，本地图片请放到‘post-image’目录下"
         },
         {
-          "label": "时间",
-          "name": "time",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "label": "地点",
-          "name": "location",
-          "type": "textarea",
-          "value": ""
-        },
-        {
-          "label": "设备",
-          "name": "device",
-          "type": "textarea",
-          "value": ""
-        },
-        {
           "label": "描述",
           "name": "description",
           "type": "textarea",
@@ -235,6 +217,27 @@
         }
       ],
       "note": ""
+    },
+    {
+      "name":"memosDomain",
+      "group": "日常/memos",
+      "label": "memos地址",
+      "type": "input",
+      "value": "https://"
+    },
+    {
+      "name": "memosLimit",
+      "group": "日常/memos",
+      "label": "memos条目数量",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "name": "memosId",
+      "group": "日常/memos",
+      "label": "memos用户ID",
+      "type": "input",
+      "value": ""
     },
     {
       "name": "friendsPageName",

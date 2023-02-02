@@ -10,7 +10,6 @@
   <% if (site.customConfig.katex) { %>
   <link rel="stylesheet" href="<%= site.themeConfig.domain %>/media/css/katex.min.css">
   <script defer src="<%= site.themeConfig.domain %>/media/scripts/katex.min.js"></script>
-  <script defer src="<%= site.themeConfig.domain %>/media/scripts/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
   <% } %>
   <% if (site.customConfig.codeHighlight) { %>
   <link rel="stylesheet" href="<%= site.themeConfig.domain %>/media/css/prism.css">
@@ -67,7 +66,7 @@
           <% if (site.customConfig.openWalinePageCount) { %>
           <!-- 访问量统计 -->
           <!-- data-path 将作为查询条件 -->
-          阅读量: <span class="waline-pageview-count" data-path="/post/<%= post.fileName %>/"></span>
+          阅读量: <span class="waline-pageview-count" data-path=window.location.pathname></span>
           <% } %>
 
           <% if (site.customConfig.openTwikooPageCount) { %>

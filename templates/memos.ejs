@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle:`${themeConfig.siteName} `}) %>	
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+  </head>
+
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="mainpage-wrapper">
+    <%- include('./includes/header') %>
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <div class="post-pagetitle">
+            <h2>日常</h2>
+          </div>
+
+          <div id="bber"></div>
+
+
+        </div>
+      </div>
+
+      <!-- back to top -->
+      <button oneclik="topFunction()" id="BackToTop">
+        TOP
+      </button>
+
+      <%- include('./includes/footer') %>
+
+    <script src="<%= site.themeConfig.domain %>/media/scripts/jquery.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/browser.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/breakpoints.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/util.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
+    <script type="text/javascript">
+        var bbMemos = {
+        memos : '<%- site.customConfig.memosDomain%>',
+        limit : '<%= site.customConfig.memosLimit%>',
+        creatorId:<%= site.customConfig.memosId%>,
+        domId: '',
+        }
+    </script>
+    <script src="https://immmmm.com/bb-lmm-mk.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/marked.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/view-image.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/lately.min.js"></script>
+    <script>
+      back_to_top();
+      window.ViewImage && ViewImage.init('img');
+    </script>
+  </body>
+</html>

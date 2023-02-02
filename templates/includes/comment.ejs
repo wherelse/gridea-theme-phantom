@@ -23,8 +23,8 @@
     Waline.init({
       el: '#waline',// 容器元素
       serverURL: '<%= site.customConfig.walineUrl %>',
-      path: window.location.href,
-      pageview: <%- site.customConfig.openWalinePageCount %>, // 评论数统计
+      //path: window.location.href,
+      pageview: <%- site.customConfig.openWalinePageCount %>,// 评论数统计
       lang:'<%- site.customConfig.walineLang %>'
     });
   </script>

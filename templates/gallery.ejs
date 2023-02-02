@@ -28,24 +28,15 @@
                 <div class="gallery-image-wrapper">
                   <div class="gallery-image">
                     <% if (photo.PictureSource) { %>
-                    <img  src="<%= photo.photolink %>" loading="lazy" />
+                    <img  class="lazy" data-src="<%= photo.photolink %>" loading="lazy" />
                     <% } else{%>
-                    <img  src="<%= site.themeConfig.domain %>/post-images/<%= photo.photolink %>" loading="lazy"/>
+                    <img  class="lazy" data-src="<%= site.themeConfig.domain %>/post-images/<%= photo.photolink %>" loading="lazy"/>
                     <%};%> 
                   </div>  
                   <div class="image-title">
                     <ul>
-                      <% if (photo.time) { %>
-                        <li class=""><%= photo.time %></li>
-                      <% }%>
-                      <% if (photo.location) { %>
-                        <li class=""><%= photo.location %></li>
-                      <% }%>
-                      <% if (photo.device) { %>
-                        <li class=""><%= photo.device %></li>
-                      <% }%>
                       <% if (photo.description) { %>
-                        <li class=""><%= photo.description %></li>
+                      <%= photo.description %>
                       <% }%>
                     </ul>
                   </div>  
@@ -69,8 +60,13 @@
     <script src="<%= site.themeConfig.domain %>/media/scripts/breakpoints.min.js"></script>
     <script src="<%= site.themeConfig.domain %>/media/scripts/util.js"></script>
     <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/view-image.min.js"></script>
+    <script src="<%= site.themeConfig.domain %>/media/scripts/lazyload.min.js"></script>
     <script>
       back_to_top();
+      window.ViewImage && ViewImage.init('img');
+      var lazyLoadInstance = new LazyLoad({});
+      lazyLoadInstance.update();
     </script>
   </body>
 </html>
