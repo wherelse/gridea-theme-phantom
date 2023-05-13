@@ -10,6 +10,7 @@
 - 日常页面
 - Katex公式与代码高亮
 - Waline与Twikoo评论支持
+- 霞鹜文楷字体支持
 
 ## 安装
 使用 git clone 本项目到 Gridea 站点源文件路径的 themes 目录内，或者下载最新的源代码解压到 Gridea 站点源文件路径的 themes 目录内，然后 重启 Gridea 即可。 
