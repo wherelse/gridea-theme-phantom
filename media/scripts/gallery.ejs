@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <%- include('./includes/head', { siteTitle: `相册 - ${themeConfig.siteName}` }) %>
+  <meta name="description" content="相册" />
+  <link rel="stylesheet" href="<%= site.themeConfig.domain %>/media/css/gallery.css">
+  <link rel="canonical" href="<%= site.themeConfig.domain %>/gallery/" />
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="<%= site.themeConfig.domain %>"
+      class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      <%= themeConfig.siteName %>
+    </a>
+    <div class="max-w-5xl w-full mx-auto">
+      <div
+        class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-32 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">相册</h1>
+
+        <!-- jumbotron -->
+        <div class="jumbotron">
+          <div class="container">
+            <p><i class="ri-camera-line"></i> 光影一瞬，留下记忆的片段</p>
+            <!-- <br>
+            <p><small class="text-gray-400">
+                本页面下所有图片均为本人业余时间作品，记录生活，分析美好瞬间，未经同意不得转载，爬取。
+              </small></p> -->
+          </div>
+        </div>
+
+        <!-- Photos -->
+        <div class="card-columns">
+          <% if (site.customConfig.photos) { %>
+          <% site.customConfig.photos.forEach(function(photo) { %>
+          <!-- Cards -->
+          <div class="card">
+            <% if (photo.PictureSource) { %>
+            <img class="card-img-top lazy" src ="<%= site.themeConfig.domain %>/post-images/img-place.jpg"
+             data-src="<%= photo.photolink %>" alt="">
+            <% } else{%>
+            <img class="card-img-top lazy" src ="<%= site.themeConfig.domain %>/post-images/img-place.jpg"
+              data-src="<%= site.themeConfig.domain %>/post-images/<%= photo.photolink %>" alt="">
+            <%};%>
+            <div class="card-body">
+              <p class="card-text"><small class="text-gray-400"><%= photo.description %></small></p><!-- 时间、地点什么的，随你 -->
+            </div>
+          </div>
+          <% }); %>
+          <% } %>
+        </div>
+
+      </div>
+    </div>
+
+    <%- include('./includes/footer') %>
+
+    <!-- Back to top -->
+    <div
+      class="fixed right-0 bottom-0 mb-6 mr-4 shadow w-12 h-12 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200"
+      @click="backToUp" v-show="scrolled">
+       <i class="ri-arrow-up-circle-fill"></i>
+    </div>
+  </div>
+
+  <script src="<%= site.themeConfig.domain %>/media/scripts/vue.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/main.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/view-image.min.js"></script>
+  <script src="<%= site.themeConfig.domain %>/media/scripts/lazyload.min.js"></script>
+  <script>
+    window.ViewImage && ViewImage.init('img');
+    var lazyLoadInstance = new LazyLoad({});
+    lazyLoadInstance.update();
+  </script>
+
+</body>
+
+</html>
